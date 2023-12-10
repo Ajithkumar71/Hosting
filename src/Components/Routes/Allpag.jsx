@@ -10,7 +10,7 @@ import Pricing_M from '../page/Pricing';
 import Touch_M from '../page/Contact'
 import Footer_M from '../page/Footer'
 
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function Homepages() {
   return (
@@ -77,7 +77,8 @@ function Contpage(){
 const Paths=()=>{
   return(
     <>
-    <Router>
+    <BrowserRouter basename='/Hosting'>
+    
     <Routes>
       <Route path='/' element={< Homepages/>} />
        <Route path='/about' element={< Aboutpage />} />
@@ -85,7 +86,8 @@ const Paths=()=>{
          <Route path='/pricing' element={< Pricpage/>} />
           <Route path='/contact' element={< Contpage/>} />
     </Routes>
-    </Router>
+    
+    </BrowserRouter>
     </>
   )
 }
